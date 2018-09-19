@@ -24,7 +24,7 @@
   "homepage": "https://github.com/tgutmann87/Farnsworth#readme",
   
   "engines": {
-    "node": "6.4.1"
+    "node": "8.11.1"
   }
 }
 
