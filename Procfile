@@ -1,1 +1,1 @@
-worker: node ./farnsworth.js
+web: node ./farnsworth.js
