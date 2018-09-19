@@ -1,1 +1,1 @@
-worker: node ./farnsworth.js
+worker: npm start
