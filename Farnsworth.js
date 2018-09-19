@@ -9,15 +9,15 @@ var lfgMembers = []; //Array of User id
 
 client.on("ready", () => {
   console.log("I am ready!");
-  //client.user.setActivity("Good News Everyone!");
-  client.user.setActivity("Go Fuck Yourselves!!!");
+  client.user.setActivity("Good News Everyone!");
+  //client.user.setActivity("Go Fuck Yourselves!!!");
 });
 
 client.on("message", (message) => {
 	var commands = message.content.split(' ');
 	
 	//!ping: Basic test ping command
-	if (message.content.startsWith("ping")) {
+	if (message.content.startsWith("!ping")) {
 		Ping.ping(message);
 	}
 	//!Roll <integer>: Rolls a x sided die

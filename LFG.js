@@ -1,7 +1,7 @@
 //Start
 var lfgStarted = false; //Flag signifying whether LFG is being used
 var lfgTimer; //setTimeout variable
-var lfgGame = "General"; //Game for desired group
+var lfgGame; //Game for desired group
 var lfgMembers = []; //Array of User id
 var lfgUsernames = []; //Array of Usernames
 
@@ -21,6 +21,13 @@ module.exports = {
 			
 			//Clips game from the initial start command
 			lfgGame = message.content.slice(5, message.content.length);
+			lfgGame.trim();
+			
+			//If no game then it will set the game to General
+			if(lfgGame == null || lfgGame == "" )
+			{
+				lfgGame = "General";
+			}
 			
 			message.channel.send("<@" + lfgMembers[0] + "> has started the Group Finder for " + lfgGame + "\nPlease use !JoinUp to queue up.");
 			
