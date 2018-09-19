@@ -1,3 +1,4 @@
+//Start
 var lfgStarted = false; //Flag signifying whether LFG is being used
 var lfgTimer; //setTimeout variable
 var lfgGame = "General"; //Game for desired group
