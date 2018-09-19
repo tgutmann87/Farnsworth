@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
-const Ping = require("./Ping");
-const LFG = require("./LFG");
-const Roles = require("./Roles");
+const Ping = require("./ping");
+const LFG = require("./lfg");
+const Roles = require("./roles");
 const client = new Discord.Client();
 
 var lfgTimer; //setTimeout variable
