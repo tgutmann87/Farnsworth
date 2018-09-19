@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"worker": "node farnsworth.js"
+	"start": "node farnsworth.js"
   },
   "keywords": [],
   "author": "Tim Gutmann",
