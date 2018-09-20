@@ -8,7 +8,6 @@ var lfgUsernames = []; //Array of Usernames
 module.exports = {
 	Start: function(message, client)
 	{
-		console.log(lfgStarted);
 		if(!lfgStarted)
 		{
 			var userList = "";
@@ -78,6 +77,7 @@ module.exports = {
 	Join: function(message, client)
 	{
 		var userList = "";
+		var userExistsFlag = false;
 		
 		if(!lfgStarted)
 		{
@@ -85,9 +85,22 @@ module.exports = {
 		}
 		else
 		{
-			//Places user to last group spot
-			lfgMembers.push(message.author.id);
-			lfgUsernames.push(message.author.username);
+			for(i = 0; i < lfgMembers.length; i++)
+			{
+				if(message.author.id == lfgMembers[i])
+				{
+					userExistsFlag = true;
+					message.channel.send("<@" + message.author.id + "> You have already joined the group. You must wait for group finder to end");
+					break;
+				}
+			}
+			
+			if(userExistsFlag == false)
+			{
+				//Places user to last group spot
+				lfgMembers.push(message.author.id);
+				lfgUsernames.push(message.author.username);
+			}
 			
 			for(i = 0; i < lfgUsernames.length; i++)
 			{
