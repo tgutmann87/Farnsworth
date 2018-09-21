@@ -1,5 +1,11 @@
-Git pull //pulls current repository
+//pulls current repository
+Git pull 
 
-https://github.com/discordjs/discord.js/issues/711 //Joining voice channel
+//Joining voice channel
+https://github.com/discordjs/discord.js/issues/711 
 
-https://steamcommunity.com/dev //Steam API Information
+
+//Steam API Information
+https://steamcommunity.com/dev 
+https://steamcommunity.com/app/730/discussions/0/620713633861549029/
+https://codepen.io/johnchristopherjones/post/how-do-i-use-the-steam-api-in-my-web-app

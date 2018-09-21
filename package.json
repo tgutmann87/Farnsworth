@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node ./farnsworth.js"
+    "start": "node ./farnsworth.js"
   },
   "keywords": [],
   "author": "Tim Gutmann",
@@ -22,10 +22,7 @@
     "url": "https://github.com/tgutmann87/Farnsworth/issues"
   },
   "homepage": "https://github.com/tgutmann87/Farnsworth#readme",
-  
   "engines": {
     "node": "8.11.1"
   }
 }
-
-
