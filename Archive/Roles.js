@@ -14,8 +14,10 @@ module.exports = {
 	},
 	
 	Unsubscribe: function(message, client, arg)
-	{		
-		console.log(message.guild.roles.find("name", "ESO").position);
+	{
+		guildRoles = message.guild.roles.array();
+		console.log(guildRoles);
+		
 		for(var i = 0; i < groups.length; i++)
 		{
 			if(arg == groups[i])
