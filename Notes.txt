@@ -1,1 +1,3 @@
 Git pull //pulls current repository
+
+https://github.com/discordjs/discord.js/issues/711 //Joining voice channel
