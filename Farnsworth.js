@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const Ping = require("./ping");
 const LFG = require("./lfg");
 const Roles = require("./roles");
+const Auth = require("../Auth");
 const client = new Discord.Client();
 
 var commandToken = "!";
@@ -57,4 +58,4 @@ client.on("message", (message) => {
 	
 });
 
-client.login("NDQwNjc2MDMwNDc1MTQxMTMz.DclLHw.D9YkxUOe2uEIqwkWf_0sTfxTnT0");
+client.login(Auth.getDiscordAPI());
