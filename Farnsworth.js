@@ -4,6 +4,7 @@ const LFG = require("./lfg");
 const Roles = require("./roles");
 //const Steam = require("./SteamInterface");
 const Auth = require("../Auth");
+const Information = require("./information");
 const client = new Discord.Client();
 
 var commandToken = "!";
@@ -30,12 +31,7 @@ client.on("message", (message) => {
 	//!WhoAmI: Displays some user account information
 	else if(commands[0] == commandToken + "whoami")
 	{
-		message.channel.send("User: " + message.author.username);
-		message.channel.send("User ID: " + message.author.id);
-		var date = new Date(message.author.createdTimestamp)
-		message.channel.send("Created On: " + date.toString());
-		message.channel.send("Bot: " + message.author.bot);
-		message.channel.send("Tag: " + message.author.tag);
+		Information.Whoami(message, client);
 	}
 	//!LFG <integer>: Starts looking for group with max of x people
 	else if(commands[0] == commandToken + "lfg")
