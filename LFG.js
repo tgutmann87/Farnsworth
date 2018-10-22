@@ -2,6 +2,7 @@
 var lfgStarted = false; //Flag signifying whether LFG is being used
 var lfgTimer; //setTimeout variable
 var lfgGame; //Game for desired group
+var lfgLength = 3;
 var lfgMembers = []; //Array of User id
 var lfgUsernames = []; //Array of Usernames
 
@@ -64,7 +65,7 @@ module.exports = {
 				//Resets LFG started flag
 				lfgStarted = false;
 				lfgMembers = [];
-			}, 1000*60*3); //Millisecond countdown (ms*sec*min)
+			}, 1000*60*lfgLength); //Millisecond countdown (ms*sec*min)
 
 		}
 		else

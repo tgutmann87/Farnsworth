@@ -9,3 +9,10 @@ https://github.com/discordjs/discord.js/issues/711
 https://steamcommunity.com/dev 
 https://steamcommunity.com/app/730/discussions/0/620713633861549029/
 https://codepen.io/johnchristopherjones/post/how-do-i-use-the-steam-api-in-my-web-app
+
+//Steam API for javascript
+https://www.npmjs.com/package/steamapi
+http://www.jradp.com/STEAM/
+
+
+http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=440&key=CFF6C956F08E58F3BBD1570A6F1A48D8&steamid=76561198108055615

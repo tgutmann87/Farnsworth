@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const Ping = require("./ping");
 const LFG = require("./lfg");
 const Roles = require("./roles");
+//const Steam = require("./SteamInterface");
 const Auth = require("../Auth");
 const client = new Discord.Client();
 
@@ -9,6 +10,7 @@ var commandToken = "!";
 
 client.on("ready", () => {
   console.log("I am ready!");
+  //console.log(Steam.userStats());
   client.user.setActivity("Good News Everyone!");
   //client.user.setActivity("Go Fuck Yourselves!!!");
 });
