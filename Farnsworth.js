@@ -5,6 +5,7 @@ const Roles = require("./roles");
 //const Steam = require("./SteamInterface");
 const Auth = require("../Auth");
 const Information = require("./information");
+const Vote = require(./vote);
 const client = new Discord.Client();
 
 var commandToken = "!";
@@ -52,6 +53,19 @@ client.on("message", (message) => {
 	else if(commands[0] == commandToken + "unsubscribe")
 	{
 		Roles.Unsubscribe(message, client, commands[1]);
+	}
+	//!vote-question Allows a user to set the question for a vote
+	else if(commands[0] == commandToken + "vote-question")
+	{
+		
+	}
+	//!vote-answer-add Allows the user to add answers for the voting question
+	else if(commands[0] == commandToken + "vote-answer-add")
+	{
+	}
+	//!vote-start Allows the user to start the vote as long as the question and answers have been set
+	else if(commands[0] == commandToken + "vote-start")
+	{
 	}
 	
 });
