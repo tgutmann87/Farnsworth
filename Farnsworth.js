@@ -5,7 +5,8 @@ const Roles = require("./roles");
 //const Steam = require("./SteamInterface");
 const Auth = require("../Auth");
 const Information = require("./information");
-const Vote = require(./vote);
+const Vote = require("./vote");
+const Timer = require("./timer");
 const client = new Discord.Client();
 
 var commandToken = "!";
@@ -65,6 +66,9 @@ client.on("message", (message) => {
 	}
 	//!vote-start Allows the user to start the vote as long as the question and answers have been set
 	else if(commands[0] == commandToken + "vote-start")
+	{
+	}
+	else if(commands[0] == commandToken + "timer-start")
 	{
 	}
 	
