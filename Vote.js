@@ -11,7 +11,7 @@ module.exports = {
 		{
 			question = message.content.splice(0,13);
 		}
-	}
+	},
 	
 	VoteAnswerAdd: function(message, client)
 	{
@@ -20,7 +20,7 @@ module.exports = {
 		{
 			answers.push(message.content.splice(0,15));
 		}
-	}
+	},
 	
 	VoteStart: function(message, client)
 	{

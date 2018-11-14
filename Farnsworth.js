@@ -70,6 +70,7 @@ client.on("message", (message) => {
 	}
 	else if(commands[0] == commandToken + "timer-start")
 	{
+		Timer.StartTimer(message, client);
 	}
 	
 });
