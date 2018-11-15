@@ -4,7 +4,7 @@ var timerInterval = 1000*60*.5;
 var discordTimer;
 var periodicMsg;
 var timerReason = "Default";
-var timerEndDate = new Date("12/20/2018 10:11:56 AM");
+var timerEndDate = new Date("11/20/2018 8:00:00 PM");
 var currentTime = new Date();
 
 
@@ -17,6 +17,28 @@ module.exports = {
 			discordTimer = client.setTimeout(() => timeout(message, client), timerLength);
 			periodicMsg = client.setInterval(() => interval(message, client), timerInterval);
 		}
+		else
+			message.channel.send("Someone has already started a countdown");
+	}
+	
+	StopTimer: function(message, client)
+	{
+		if(timerStart == true)
+		{
+			clearTimeout(discordTimer);
+			clearInterval(periodicMsg);
+			timerStart = false;
+		}
+	}	
+	
+	SetTimerReason: function(message, client, reason)
+	{
+		timerReason = reason;
+	}
+	
+	SetTimerEndDate: function(message, client, endDate)
+	{
+		timerEndDate = endDate;
 	}
 }
 
@@ -56,6 +78,7 @@ function interval(message, client)
 			{
 				name: "Time Left: ",
 				value: timeConvert(timerEndDate - currentTime)
+				//value: timeConvert(90000000)
 			}
 		]
 	}
@@ -70,9 +93,9 @@ function timeConvert(time)
   time = (time - secs) / 60;
   var mins = time % 60;
   time = (time - mins) /60;
-  var hrs = time % 60;
+  var hrs = time % 24;
   time = (time - hrs) / 24;
-  var days = time % 24;
+  var days = time % 30;
  
-  return days + " Days " + hrs + ':' + mins + ':' + secs + '.' + ms;
+  return days + " Days  " + hrs + " hrs  " + mins + " mins  " + secs + " secs  ";
 }
