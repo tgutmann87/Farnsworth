@@ -1,11 +1,11 @@
 var discordTimer;
 var periodicMsg;
-var timerReason = "Default";
-var timerEndDate = new Date("11/20/2018 8:00:00 PM");
+var timerReason = "Caleb Gets out of the Corner!!!!!!!!!!!!";
+var timerEndDate = new Date("02/26/2019 10:00:00 PM");
 var currentTime = new Date();
 var timerStart = false;
 var timerLength = timerEndDate - currentTime;
-var timerInterval = 1000*60*.5;
+var timerInterval = 1000*60*5;
 
 module.exports = {
 	StartTimer: function(message, client)
@@ -18,7 +18,7 @@ module.exports = {
 		}
 		else
 			message.channel.send("Someone has already started a countdown");
-	}
+	},
 	
 	StopTimer: function(message, client)
 	{
@@ -30,18 +30,18 @@ module.exports = {
 		}
 		else
 			message.channel.send("Timer is not currently active");
-	}	
+	},	
 	
 	SetTimerReason: function(message, client, reason)
 	{
 		timerReason = reason;
-	}
+	},
 	
 	SetTimerEndDate: function(message, client, endDate)
 	{
 		timerEndDate = new Date(endDate);
 		timerLength = timerEndDate - currentTime;
-	}
+	},
 	
 	SetMsgInterval: function(message, client, msgInt)
 	{
