@@ -1,20 +1,22 @@
 var discordTimer;
-var periodicMsg;
-var timerReason = "Caleb Gets out of the Corner!!!!!!!!!!!!";
-var timerEndDate = new Date("02/26/2019 10:00:00 PM");
+var periodicMsg; 
+var timerReason = "Caleb Gets out of the Corner!!!!!!!!!!!!"; ? //Subject of Timer
+var timerEndDate = new Date("02/25/2019 10:00:00 PM"); //Timer Completion Date
 var currentTime = new Date();
-var timerStart = false;
+var timerStart = false; //Has the timer been started
 var timerLength = timerEndDate - currentTime;
-var timerInterval = 1000*60*5;
+var timerInterval = 1000*60*60*6; //ms*sec*min*hr
 
 module.exports = {
 	StartTimer: function(message, client)
 	{
 		if(timerStart == false)
 		{
-			timerStart = true;
-			discordTimer = client.setTimeout(() => timeout(message, client), timerLength);
-			periodicMsg = client.setInterval(() => interval(message, client), timerInterval);
+			timerStart = true; // Flags the start
+			//message.channel.send("Timer has been started for \"" + timerReason + "\"" ); //Optional Line for verbose
+			Consoloe.log("Timer Started for" + timerReason); //Logs timer start
+			discordTimer = client.setTimeout(() => timeout(message, client), timerLength); //Start overall timer object
+			periodicMsg = client.setInterval(() => interval(message, client), timerInterval); //Start messages on interval
 		}
 		else
 			message.channel.send("Someone has already started a countdown");
@@ -26,7 +28,7 @@ module.exports = {
 		{
 			clearTimeout(discordTimer);
 			clearInterval(periodicMsg);
-			timerStart = false;
+			timerStart = false; //Reset flag
 		}
 		else
 			message.channel.send("Timer is not currently active");
@@ -51,6 +53,7 @@ module.exports = {
 
 function timeout(message, client)
 {
+	//Send Discord Pane Message
 	client.channels.get(message.channel.id).send({embed: {
 	color: 3447003,
 	author: {
@@ -63,15 +66,17 @@ function timeout(message, client)
 	}
 	})
 	
+	//Reset Timer/Interval
 	clearTimeout(discordTimer);
 	clearInterval(periodicMsg);
-	timerStart = false;
+	timerStart = false; //Reset Flag
 }
 
 function interval(message, client)
 {
 	currentTime = new Date();
 	
+	//Send Discord Pane Message
 	client.channels.get(message.channel.id).send({embed: {
 	color: 3447003,
 	author: {
@@ -79,13 +84,13 @@ function interval(message, client)
 	  icon_url: client.user.avatarURL
 	},
 
-	title: "Countdown until: ",
+	title: "Countdown until: " + timerReason,
 
 		fields: [
 			{
 				name: "Time Left: ",
 				value: timeConvert(timerEndDate - currentTime)
-				//value: timeConvert(90000000)
+				//value: timeConvert(90000000) //Debug Line
 			}
 		]
 	}
